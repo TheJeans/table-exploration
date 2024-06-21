@@ -1,0 +1,58 @@
+/*!* styles.css *!*/
+/*thead th {*/
+/*    @apply px-4 py-2 border-b-2 border-gray-200 bg-gray-100 text-left text-sm leading-4 text-gray-600 tracking-wider;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*    !*background: white;*!*/
+/*    !*z-index: 10;*!*/
+/*}*/
+/*thead tr > :first-child {*/
+/*    !*z-index:20;*!*/
+/*    !*left:0;*!*/
+/*    !*top:0;*!*/
+/*}*/
+
+/*tbody tr {*/
+/*    @apply px-4 py-2 border-b border-gray-200 text-sm leading-5 text-gray-700;*/
+/*    z-index: 0;*/
+
+/*}*/
+/*tbody tr > :first-child {*/
+/*    background: #ddd;*/
+/*    position: sticky;*/
+/*    z-index: 0;*/
+/*    !*left: 0;*!*/
+/*}*/
+
+table thead th {
+    padding: 3px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 25vw;
+    background: #ffbcbc;
+}
+table td {
+    background: #fff;
+    padding: 4px 5px;
+    text-align: center;
+}
+
+table tbody th {
+    font-weight: 100;
+    font-style: italic;
+    text-align: left;
+    position: relative;
+}
+table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background: #dc9090;
+    /*z-index: 1;*/
+}
+table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #866161;
+}
