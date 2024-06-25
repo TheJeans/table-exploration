@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/stickyRowAndHeaders.css'
 
 interface Column {
     header: string;
@@ -20,18 +21,21 @@ interface TableProps {
     data: Props[];
 }
 
-const Table: React.FC<TableProps> = ({ columns, data }) => {
+const Table_StickyRowAndHeaders: React.FC<TableProps> = ({ columns, data }) => {
     return (
-        <section className="py-8">
+        <section className="py-8" aria-labelledby="table-title">
+            <h2 id="table-title" className="sr-only">Account Information Table</h2>
             <div className="container mx-auto px-4">
-                <div className="overflow-x-auto">
-                    <table className="min-w-[1000px] bg-white mx-auto">
+                <div className="scrolling-section" role="region" aria-labelledby="table-title">
+                    <table className="min-w-[1000px] bg-white mx-auto" role="grid">
                         <thead>
-                        <tr>
+                        <tr role="row">
                             {columns.map((column, index) => (
                                 <th
                                     key={index}
-                                    className="px-4 py-2 border-b-2 border-gray-200 bg-gray-100 text-left text-sm leading-4 text-gray-600 tracking-wider"
+                                    role="columnheader"
+                                    scope="col"
+                                    tabIndex={0}
                                 >
                                     {column.header}
                                 </th>
@@ -40,11 +44,11 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
                         </thead>
                         <tbody>
                         {data.map((row, rowIndex) => (
-                            <tr key={rowIndex} className="hover:bg-gray-100">
+                            <tr key={rowIndex} className="hover:bg-gray-100" role="row">
                                 {columns.map((column, colIndex) => (
                                     <td
                                         key={colIndex}
-                                        className="px-4 py-2 border-b border-gray-200 text-sm leading-5 text-gray-700"
+                                        role="gridcell"
                                     >
                                         {row[column.accessor as keyof Props]}
                                     </td>
@@ -55,8 +59,12 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
                     </table>
                 </div>
             </div>
+            <ul className="mt-10 px-4 container mx-auto">
+                <li>Builds on the view height and width of the tables being set.</li>
+                <li></li>
+            </ul>
         </section>
     );
 };
 
-export default Table;
+export default Table_StickyRowAndHeaders;

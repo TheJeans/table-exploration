@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/stickyRowAndHeaders.css'
+import '../../styles/table.css'
 
 interface Column {
     header: string;
@@ -21,13 +21,13 @@ interface TableProps {
     data: Props[];
 }
 
-const Table_StickyRowAndHeaders: React.FC<TableProps> = ({ columns, data }) => {
+const Table: React.FC<TableProps> = ({ columns, data }) => {
     return (
         <section className="py-8">
             <div className="container mx-auto px-4">
-                <div className="min-h-[500px] max-h-[800px] overflow-y-auto overflow-x-auto">
+                <div className="overflow-x-auto">
                     <table className="min-w-[1000px] bg-white mx-auto">
-                        <thead className="">
+                        <thead>
                         <tr>
                             {columns.map((column, index) => (
                                 <th
@@ -41,7 +41,7 @@ const Table_StickyRowAndHeaders: React.FC<TableProps> = ({ columns, data }) => {
                         </thead>
                         <tbody>
                         {data.map((row, rowIndex) => (
-                            <tr key={rowIndex} className="hover:bg-gray-100 ">
+                            <tr key={rowIndex}>
                                 {columns.map((column, colIndex) => (
                                     <td
                                         key={colIndex}
@@ -56,12 +56,8 @@ const Table_StickyRowAndHeaders: React.FC<TableProps> = ({ columns, data }) => {
                     </table>
                 </div>
             </div>
-            <ul className="mt-10 px-4 container mx-auto">
-                <li>Builds on the view height and width of the tables being set.</li>
-                <li></li>
-            </ul>
         </section>
     );
 };
 
-export default Table_StickyRowAndHeaders;
+export default Table;
