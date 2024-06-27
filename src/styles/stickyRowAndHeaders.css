@@ -31,7 +31,7 @@ table thead th:first-child {
     background: #866161;
 }
 
-.scrolling-section{
+/* .scrolling-section{
     @apply min-h-[500px] max-h-[800px] overflow-y-scroll overflow-x-scroll;
 }
 .scrolling-section::-webkit-scrollbar {
@@ -52,4 +52,4 @@ table thead th:first-child {
 
   .scrolling-section::-webkit-scrollbar-thumb:hover {
     background: #c0a0b9;
-  }
+  } */

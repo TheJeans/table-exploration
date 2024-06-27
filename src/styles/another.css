@@ -1,0 +1,38 @@
+.scrolling-section{
+    @apply min-h-[500px] max-h-[600px] overflow-y-auto overflow-x-auto mb-5;
+}
+.bg-gradient-purple-left{
+    background-image:linear-gradient(90deg, #FC6060 0.06%, #C160FC 33.37%, #7B60E8 69.29%, #3F3CFF 100%);
+}
+body{
+    background-color: rgb(250, 243, 243);
+}
+
+table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* width: 25vw; */
+    background-color: white;
+}
+table tbody th {
+    position: relative;
+}
+table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    /*z-index: 1;*/
+    background-color: white;
+}
+table tbody td:nth-child(2) {
+    position: sticky;
+    left: 40px;
+    /*z-index: 1;*/
+    background-color: white;
+}
+table thead th:first-child {
+    position: sticky;
+    left: 0;
+    /* z-index: 3; */
+    background-color: white;
+}
